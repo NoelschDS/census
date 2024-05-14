@@ -1,7 +1,5 @@
-# Welcome to streamlit
+# Explore Disability Data by Housing Demographics
 
-This is the app you get when you run `streamlit hello`, extracted as its own app.
-
-Edit [Hello.py](./Hello.py) to customize this app to your heart's desire. ❤️
+This app allows you to select location and housing features to display totals of persons reporting disabilities in those areas.
 
 Check it out on [Streamlit Community Cloud](https://st-hello-app.streamlit.app/)
