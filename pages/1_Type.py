@@ -17,23 +17,22 @@ def type_demographics() -> None:
     hh_type["variable"]=hh_type["variable"].str.replace("PHY", "Difficulty Walking")
     hh_type["variable"]=hh_type["variable"].str.replace("REM", "Difficulty Remembering")
     
-    hh_type_yes = hh_type[hh_type["variable"].str.contains("Yes")]
-    hh_type_yes["variable"] = hh_type_yes["variable"].str.replace("_Yes", "")
+    hh_type["variable"] = hh_type["variable"].str.replace("_Yes", "")
     cats = st.multiselect(
-        "Choose Disability of Interest", list(hh_type_yes.variable.unique())
+        "Choose Disability of Interest", list(hh_type.variable.unique())
     )
 
     if not cats:
         st.error("Please select a disability")
     else:
-        data=hh_type_yes[hh_type_yes["variable"].isin(cats)]
+        data=hh_type[hh_type["variable"].isin(cats)]
         cities = st.multiselect(
-            "Choose Cities of Interest", list(hh_type_yes.index.unique())
+            "Choose Cities of Interest", list(hh_type.index.unique())
         )
         all_options = st.checkbox("Select All Cities")
 
         if all_options:
-            cities = list(hh_type_yes.index.unique())
+            cities = list(hh_type.index.unique())
 
         if not cities:
             st.error("Please select a combination of cities")
