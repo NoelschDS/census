@@ -4,7 +4,6 @@ import numpy as np
 import requests
 import json
 
-members = pd.read_csv('members_data.csv')
 rent = pd.read_csv('rent_data.csv')
 house_type = pd.read_csv('type_data.csv')
 
